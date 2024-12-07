@@ -31,10 +31,10 @@ def init_data_CIFAR10():
 
 
 def accuracy(output, target):
-    _, predicted = torch.max(output, 1)  # Prend la classe avec la probabilité la plus élevée
-    correct = (predicted == target).sum().item()  # Compte les bonnes prédictions
-    total = target.size(0)  # Nombre total d'exemples dans le batch
-    return correct / total  # Calcul de la précision
+    _, predicted = torch.max(output, 1)
+    correct = (predicted == target).sum().item()
+    total = target.size(0)
+    return correct / total 
 
 def train_and_test(model, train_loader, criterion, optimizer, epochs, test_loader):
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
